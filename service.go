@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -8,7 +9,7 @@ type service struct {
 	rank        Rank
 	Layout      [][]int
 	sumOfGroups int
-	row         []int
+	usersInRow  []int
 }
 
 func newService() *service {
@@ -23,18 +24,18 @@ func (s *service) seatPeople(rankNo int, groups []int) {
 }
 
 func (s *service) creatRow(groups []int) {
-	testint := 0
+	row := 0
 	for i := 0; i < len(groups); i++ {
-
+		fmt.Println(groups[i])
 		if s.sumOfGroups+groups[i] > cap(s.Layout[i]) {
-			s.Layout[testint] = s.row
-			testint++
+			s.Layout[row] = s.usersInRow
+			row++
 			s.sumOfGroups = 0
-			s.row = nil
+			s.usersInRow = nil
 		}
 		if s.sumOfGroups < cap(s.Layout[i]) && s.sumOfGroups+groups[i] <= cap(s.Layout[i]) {
 			g := s.creatGroup(groups[i])
-			s.row = append(s.row, g...)
+			s.usersInRow = append(s.usersInRow, g...)
 			s.sumOfGroups += groups[i]
 		}
 
