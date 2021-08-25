@@ -20,13 +20,11 @@ func (s *service) seatPeople(rankNo int, groups []int) {
 	s.rank.Number = rankNo
 	sort.Ints(groups)
 	s.creatRow(groups)
-
 }
 
 func (s *service) creatRow(groups []int) {
 	row := 0
 	for i := 0; i < len(groups); i++ {
-		fmt.Println(groups[i])
 		if s.sumOfGroups+groups[i] > cap(s.Layout[i]) {
 			s.Layout[row] = s.usersInRow
 			row++
@@ -37,6 +35,10 @@ func (s *service) creatRow(groups []int) {
 			g := s.creatGroup(groups[i])
 			s.usersInRow = append(s.usersInRow, g...)
 			s.sumOfGroups += groups[i]
+		}
+		if i == len(groups)-1 {
+			s.Layout[row] = s.usersInRow
+			fmt.Println("All groups placed")
 		}
 
 	}
