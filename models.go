@@ -9,11 +9,11 @@ type Section struct {
 }
 
 type Rank struct {
-	Number int
-	Row    []Seat
+	number int
+	row    []Seat
 }
 
 type Seat struct {
-	Number int
+	number int
 	desc   string
 }

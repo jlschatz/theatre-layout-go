@@ -17,7 +17,7 @@ func newService() *service {
 }
 
 func (s *service) seatPeople(rankNo int, groups []int) {
-	s.rank.Number = rankNo
+	s.rank.number = rankNo
 	sort.Ints(groups)
 	s.creatRow(groups)
 }
@@ -40,7 +40,6 @@ func (s *service) creatRow(groups []int) {
 			s.Layout[row] = s.usersInRow
 			fmt.Println("All groups placed")
 		}
-
 	}
 }
 
