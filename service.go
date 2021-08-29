@@ -21,23 +21,11 @@ func newService() *service {
 	return srv
 }
 
-func (s *service) seatPeople(rankNo int, groups []int) Layout {
+func (s *service) seatPeople(rankNo int, groups []int) {
 	s.rank.Number = rankNo
 	sort.Ints(groups)
 	s.creatRow(groups)
 
-	var testResponse Layout
-	var testSection Section
-	var testRank Rank
-
-	testSection.Name = "hall"
-	testRank.Number = s.rank.Number
-	testRank.Rows = s.Layout
-
-	testSection.Ranks = append(testSection.Ranks, testRank)
-	testResponse.Sections = append(testResponse.Sections, testSection)
-
-	return testResponse
 }
 
 func (s *service) creatRow(groups []int) {
