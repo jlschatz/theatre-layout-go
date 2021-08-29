@@ -10,18 +10,6 @@ import (
 	"github.com/go-chi/cors"
 )
 
-// func main() {
-// 	srv := newService()
-
-// 	srv.Layout = make([][]int, 10)
-// 	for i := range srv.Layout {
-// 		srv.Layout[i] = make([]int, 0, 10)
-// 	}
-// 	srv.seatPeople(4, []int{4, 1, 5, 1, 6, 3, 3, 4, 8, 9})
-// 	fmt.Print(srv.Layout)
-
-// }
-
 func main() {
 
 	r := chi.NewRouter()
@@ -42,7 +30,7 @@ func main() {
 	})
 	r.Use(c.Handler)
 
-	r.Get("/api/v1/", GetLayout)
+	r.Get("/api/v1/", getLayout)
 
 	log.Println("Server listening on port: 8080")
 	http.ListenAndServe(":8080", r)
