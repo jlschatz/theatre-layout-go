@@ -6,6 +6,11 @@ import (
 	"net/http"
 )
 
+// Get Layout
+// @Summary Get generated seat layout
+// @Produce  json
+// @Header 200 {string} Token "qwerty"
+// @Router /layout [get]
 func getLayout(w http.ResponseWriter, req *http.Request) {
 
 	defer func() {
