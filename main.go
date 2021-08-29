@@ -20,7 +20,6 @@ import (
 // @contact.name API Support
 // @contact.url http://www.swagger.io/support
 // @contact.email jurgen.schatz@gmail.com
-
 // @BasePath /api/v1
 func main() {
 
