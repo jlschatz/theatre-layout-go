@@ -13,7 +13,12 @@ type service struct {
 }
 
 func newService() *service {
-	return &service{}
+	srv := &service{}
+	srv.Layout = make([][]int, 10)
+	for i := range srv.Layout {
+		srv.Layout[i] = make([]int, 0, 10)
+	}
+	return srv
 }
 
 func (s *service) seatPeople(rankNo int, groups []int) {
