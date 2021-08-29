@@ -1,19 +1,19 @@
 package main
 
 type Layout struct {
-	sections []Section
+	Sections []Section `json:"sections"`
 }
 
 type Section struct {
-	ranks []Rank
+	Name  string `json:"sectionname"`
+	Ranks []Rank `json:"ranks"`
 }
 
 type Rank struct {
-	Number int
-	Row    []Seat
+	Number int     `json:"ranknumber"`
+	Rows   [][]int `json:"rows"`
 }
 
-type Seat struct {
-	Number int
-	desc   string
+type Resposne struct {
+	Layout `json:"layout"`
 }
