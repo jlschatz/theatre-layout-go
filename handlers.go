@@ -25,7 +25,7 @@ func getLayout(w http.ResponseWriter, req *http.Request) {
 	}()
 	srv := newService()
 
-	var response Resposne
+	var response Response
 	response.Layout = simulateInput(srv)
 
 	b, err := json.Marshal(response)

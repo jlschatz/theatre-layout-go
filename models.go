@@ -14,6 +14,6 @@ type Rank struct {
 	Rows   [][]int `json:"rows"`
 }
 
-type Resposne struct {
+type Response struct {
 	Layout `json:"layout"`
 }
