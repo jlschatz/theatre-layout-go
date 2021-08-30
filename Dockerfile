@@ -3,7 +3,7 @@ FROM golang AS buildStage
 WORKDIR /go/src/github.com/theatre-layout-go
 COPY . .
 ENV GIT_TERMINAL_PROMPT=1
-RUN go get -insecure golang.org/x/sys/unix
+RUN go get golang.org/x/sys/unix
 RUN CGO_ENABLED=0  go get -insecure  -v .../.
 
 RUN  CGO_ENABLED=0 go build

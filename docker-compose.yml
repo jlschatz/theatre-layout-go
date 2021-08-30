@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  theatre-layout-go:
+    restart: always
+    image: repo.treescale.com/jlschatz/theatre-layout-go
+    ports:
+      - 8080:8080
